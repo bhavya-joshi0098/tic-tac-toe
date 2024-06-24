@@ -1,4 +1,4 @@
-<!-- https://chic-souffle-309d7f.netlify.app/ -->
+<!-- https://tic-tac-toe-game-bhavya.netlify.app/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,6 +174,7 @@ let div_6_value;
 let div_7_value;
 let div_8_value;
 let div_9_value;
+let count=0;
 function move(){
     if(currentPlayer=="X"){
         heading.innerHTML=currentPlayer;
@@ -186,38 +187,47 @@ function move(){
 function div_1_move(){
     div_1_value=currentPlayer;
 document.getElementById('button_1').innerHTML=currentPlayer;
+	 count=count+1;
 }
 function div_2_move(){
     div_2_value=currentPlayer;
     document.getElementById('button_2').innerHTML=currentPlayer;
+	 count=count+1;
     }
     function div_3_move(){
         div_3_value=currentPlayer;
         document.getElementById('button_3').innerHTML=currentPlayer;
+	     count=count+1;
         }
         function div_4_move(){
             div_4_value=currentPlayer;
             document.getElementById('button_4').innerHTML=currentPlayer;
+		 count=count+1;
             }
             function div_5_move(){
                 div_5_value=currentPlayer;
                 document.getElementById('button_5').innerHTML=currentPlayer;
+		     count=count+1;
                 }
                 function div_6_move(){
                     div_6_value=currentPlayer;
                     document.getElementById('button_6').innerHTML=currentPlayer;
+			 count=count+1;
                     }
                     function div_7_move(){
                         div_7_value=currentPlayer;
                         document.getElementById('button_7').innerHTML=currentPlayer;
+			     count=count+1;
                         }
                         function div_8_move(){
                             div_8_value=currentPlayer;
                             document.getElementById('button_8').innerHTML=currentPlayer;
+				 count=count+1;
                             }
                             function div_9_move(){
                                 div_9_value=currentPlayer;
                                 document.getElementById('button_9').innerHTML=currentPlayer;
+				     count=count+1;
                                 }
 function RED_color(){
     document.getElementById("color").style.backgroundColor="red";
@@ -226,16 +236,6 @@ function blue_color(){
     document.getElementById("color").style.backgroundColor="blue";
 }
 function show(){
-    let count=0;
-    /*console.log("div_1 =",div_1_value);
-    console.log("div_2 =",div_2_value);
-    console.log("div_3 =",div_3_value);
-    console.log("div_4 =",div_4_value);
-    console.log("div_5 =",div_5_value);
-    console.log("div_6 =",div_6_value);
-    console.log("div_7 =",div_7_value);
-    console.log("div_8 =",div_8_value);
-    console.log("div_9 =",div_9_value);*/
     if(div_1_value==="O" && div_2_value==="O" && div_3_value==="O"){
        alert("O winngs");
     }else if(div_4_value==="O" && div_5_value==="O" && div_6_value==="O"){
@@ -268,9 +268,11 @@ function show(){
          alert("X winngs");
      }else if(div_3_value==="X"&& div_5_value==="X"&& div_7_value==="X"){
          alert("X winngs");
-     }else if(div_1_value==="O" && div_2_value==="O" && div_3_value==="O"){
-
-     }
+     }else if(count ==9){
+	    alert("Draw")
+	}else{
+    }
+	
 }
 	</script>
 </body>
