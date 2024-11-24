@@ -1,288 +1,48 @@
-<!-- https://tic-tac-toe-game-bhavya.netlify.app/ -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<!-- <link rel="stylesheet" type="text/css" href="calc.css"> -->
-	<style>
-		*{
-    font-size: 50px;
-}
-		#main_div{
-			margin-top: 20px;
-			margin-left: 50px;
-			display:grid;
-			grid-template-columns: repeat(3,1fr);
-			height: 300px;
-			width: 300px;
-		}
-		#div1{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-top: 0px;
-			border-left: 0px;
-		}
-		#div2{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-top: 0px;
-		}
-		#div3{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-top: 0px;
-			border-right: 0px;
-		}
-		#div4{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-left: 0px;
-		}
-		#div5{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-		}
-		#div6{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-right: 0px;
-		}
-		#div7{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-bottom: 0px;
-			border-left: 0px;
-		}
-		#div8{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-bottom: 0px;
-		}
-		#div9{
-			height: 100px;
-			width: 100px;
-			border: solid;
-			padding-top: 50px;
-			text-align: center;
-			border-bottom: 0px;
-			border-right: 0px;
-		}
-		.color_blue{
-			background-color: lightblue;
-			border-radius: 50%;
-		}
-		.color_pink{
-			background-color: lightpink;
-			border-radius: 50%;
-		}
-		#color{
-			height: 50px;
-			width: 50px;
-			border: 5px,solid;
-			background-color: red;
-			
-		}
-		button{
-			padding: 0px;;
-			height: 100px;
-			width: 100px;
-			background: transparent;
-			border: none;
-		}
-		h1{
-			margin-left: 180px;
-			text-decoration: underline;
-			color: red;
-		}
-		#Reset{
-    border: 2px,solid,black;
-    margin-left: 150px;
-    margin-bottom: 960px;
-    font-size: 15px;
-    width: 50px;
-    height: 20px;
-}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-toe</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-	<h1 id="heading">O</h1>
-	<div id="main_div">
-		    <div id="div1">
-				<button id="button_1" onclick="move() ; div_1_move() ; show()"></button>
-			</div>
-		    <div id="div2">
-				<button id="button_2" onclick="move() ; div_2_move() ; show()"></button>
-			</div>
-			<div id="div3">
-				<button id="button_3" onclick="move() ; div_3_move() ; show()"></button>
-			</div>
-			<div id="div4">
-				<button id="button_4" onclick="move() ; div_4_move() ; show()"></button>
-			</div>
-			<div id="div5">
-				<button id="button_5" onclick="move() ; div_5_move() ; show()"></button>
-			</div>
-			<div id="div6">
-				<button id="button_6" onclick="move() ; div_6_move() ; show()"></button>
-			</div>
-			<div id="div7">
-				<button id="button_7" onclick="move() ; div_7_move() ; show()"></button>
-			</div>
-			<div id="div8">
-				<button id="button_8" onclick="move() ; div_8_move() ; show()"></button>
-			</div>
-			<div id="div9">
-				<button id="button_9" onclick="move() ; div_9_move() ; show()"></button>
-			</div>
-	</div><br><br><br>
-	<button id="Reset" type="reset" onclick="location.reload(true)">reset</button>
-	<!-- <script src="calc.js"></script> -->
-	<script>
-		let currentPlayer="X";
-let div_1_value;
-let div_2_value;
-let div_3_value;
-let div_4_value;
-let div_5_value;
-let div_6_value;
-let div_7_value;
-let div_8_value;
-let div_9_value;
-let count=0;
-function move(){
-    if(currentPlayer=="X"){
-        heading.innerHTML=currentPlayer;
-         currentPlayer="O";
-     }else {
-        heading.innerHTML=currentPlayer;
-         currentPlayer="X";
-     }
-}
-function div_1_move(){
-    div_1_value=currentPlayer;
-document.getElementById('button_1').innerHTML=currentPlayer;
-	document.getElementById('button_1').disabled = true;
-	 count=count+1;
-}
-function div_2_move(){
-    div_2_value=currentPlayer;
-    document.getElementById('button_2').innerHTML=currentPlayer;
-	document.getElementById('button_2').disabled = true;
-	 count=count+1;
-    }
-    function div_3_move(){
-        div_3_value=currentPlayer;
-        document.getElementById('button_3').innerHTML=currentPlayer;
-	    document.getElementById('button_3').disabled = true;
-	     count=count+1;
-        }
-        function div_4_move(){
-            div_4_value=currentPlayer;
-            document.getElementById('button_4').innerHTML=currentPlayer;
-		document.getElementById('button_4').disabled = true;
-		 count=count+1;
-            }
-            function div_5_move(){
-                div_5_value=currentPlayer;
-                document.getElementById('button_5').innerHTML=currentPlayer;
-		    document.getElementById('button_5').disabled = true;
-		     count=count+1;
-                }
-                function div_6_move(){
-                    div_6_value=currentPlayer;
-                    document.getElementById('button_6').innerHTML=currentPlayer;
-			document.getElementById('button_6').disabled = true;
-			 count=count+1;
-                    }
-                    function div_7_move(){
-                        div_7_value=currentPlayer;
-                        document.getElementById('button_7').innerHTML=currentPlayer;
-			    document.getElementById('button_7').disabled = true;
-			     count=count+1;
-                        }
-                        function div_8_move(){
-                            div_8_value=currentPlayer;
-                            document.getElementById('button_8').innerHTML=currentPlayer;
-				document.getElementById('button_8').disabled = true;
-				 count=count+1;
-                            }
-                            function div_9_move(){
-                                div_9_value=currentPlayer;
-                                document.getElementById('button_9').innerHTML=currentPlayer;
-				    document.getElementById('button_9').disabled = true;
-				     count=count+1;
-                                }
-function RED_color(){
-    document.getElementById("color").style.backgroundColor="red";
-}
-function blue_color(){
-    document.getElementById("color").style.backgroundColor="blue";
-}
-function show(){
-    if(div_1_value==="O" && div_2_value==="O" && div_3_value==="O"){
-       alert("O winngs");
-    }else if(div_4_value==="O" && div_5_value==="O" && div_6_value==="O"){
-        alert("O winngs");
-    }else if(div_7_value==="O"&& div_8_value==="O"&& div_9_value==="O"){
-        alert("O winngs");
-    }else if(div_1_value==="O" && div_4_value=== "O" && div_7_value==="O"){
-        alert("O winngs");
-    }else if(div_2_value==="O"&& div_5_value==="O"&& div_8_value==="O"){
-        alert("O winngs");
-    }else if(div_3_value==="O" && div_6_value==="O"&& div_9_value==="O"){
-        alert("O winngs");
-    }else if(div_1_value==="O"&& div_5_value==="O"&& div_9_value==="O"){
-        alert("O winngs");
-    }else if(div_3_value==="O"&& div_5_value==="O"&& div_7_value==="O"){
-        alert("O winngs");
-    }else if(div_1_value==="X" && div_2_value==="X" && div_3_value==="X"){
-        alert("X winngs");
-     }else if(div_4_value==="X" && div_5_value==="X" && div_6_value==="X"){
-         alert("X winngs");
-     }else if(div_7_value==="X"&& div_8_value==="X"&& div_9_value==="X"){
-         alert("X winngs");
-     }else if(div_1_value==="X" && div_4_value=== "X" && div_7_value==="X"){
-         alert("X winngs");
-     }else if(div_2_value==="X"&& div_5_value==="X"&& div_8_value==="X"){
-         alert("X winngs");
-     }else if(div_3_value==="X" && div_6_value==="X"&& div_9_value==="X"){
-         alert("X winngs");
-     }else if(div_1_value==="X"&& div_5_value==="X"&& div_9_value==="X"){
-         alert("X winngs");
-     }else if(div_3_value==="X"&& div_5_value==="X"&& div_7_value==="X"){
-         alert("X winngs");
-     }else if(count ==9){
-	    alert("Draw")
-	}else{
-    }
-	
-}
-	</script>
+    <div class="d-flex justify-content-center text-align-center" id="winner">
+
+    </div>
+    <div class="d-flex justify-content-center text-align-center" id="turn_div">
+        <h3>turn = </h3>
+        <h3 id="turn_user">O</h3>
+    </div>
+    <div class="container mt-5">
+        <div class="tic-tac-toe-row">
+            <button class="tic-tac-toe-button" id="div_1"></button>
+            <button class="tic-tac-toe-button" id="div_2"></button>
+            <button class="tic-tac-toe-button" id="div_3"></button>
+        </div>
+        <div class="tic-tac-toe-row">
+            <button class="tic-tac-toe-button" id="div_4"></button>
+            <button class="tic-tac-toe-button" id="div_5"></button>
+            <button class="tic-tac-toe-button" id="div_6"></button>
+        </div>
+        <div class="tic-tac-toe-row">
+            <button class="tic-tac-toe-button" id="div_7"></button>
+            <button class="tic-tac-toe-button" id="div_8"></button>
+            <button class="tic-tac-toe-button" id="div_9"></button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center text-align-center">
+        <button type="reset" id="reset_btn" style="border-radius: 30%; background-color: #0CCA4A;"
+            onclick="location.reload()">reset</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
