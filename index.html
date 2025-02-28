@@ -8,9 +8,20 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* body{
+            display: block;
+            background-image: url(images/Gear.gif);
+        } */
+        /* div{
+            display: none;
+        } */
+    </style>
 </head>
 
-<body>
+<div>
+    <div class="container" id="main-container" style="display: none;">
+        <!-- <h1>Tic-Tac-Toe</h1> -->
     <div class="d-flex justify-content-center text-align-center" id="winner">
 
     </div>
@@ -29,6 +40,9 @@
             <button class="tic-tac-toe-button" id="div_5"></button>
             <button class="tic-tac-toe-button" id="div_6"></button>
         </div>
+        <div class="d-flex justify-content-center text-align-center">
+        <img src="images/Gear.gif" id="loader" no-repeat style="width: 100px; height: 100px; display: flex; justify-content: center; align-items: center;">  
+        </div>
         <div class="tic-tac-toe-row">
             <button class="tic-tac-toe-button" id="div_7"></button>
             <button class="tic-tac-toe-button" id="div_8"></button>
@@ -36,12 +50,19 @@
         </div>
     </div>
     <div class="d-flex justify-content-center text-align-center">
-        <button type="reset" id="reset_btn" style="border-radius: 30%; background-color: #0CCA4A;"
+        <button type="reset" id="reset_btn" style="border-radius: 25%; background-color: #0CCA4A;"
             onclick="location.reload()">reset</button>
     </div>
-
+</div>
     <!-- Bootstrap JS -->
     <script src="script.js"></script>
+    <script>
+        // document.getElementById('loader');
+        window.addEventListener('load', function () {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('main-container').style.display = 'block';
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

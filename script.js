@@ -1,14 +1,5 @@
 let turn = document.querySelector('#turn_user').innerText;
 let win_patern = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
-function change_turn() {
-    if (turn == "O") {
-        document.querySelector('#turn_user').innerText = "X";
-        turn = "X";
-    } else {
-        document.querySelector('#turn_user').innerText = "O";
-        turn = "O";
-    }
-}
 
 let btn_turn = document.querySelectorAll(".tic-tac-toe-button");
 btn_turn.forEach((btn) => {
@@ -26,7 +17,6 @@ btn_turn.forEach((btn) => {
         }
     })
 })
-console.log(btn_turn)
 function check_winner() {
     let isWinner = false;
     win_patern.forEach((win) => {
@@ -61,4 +51,14 @@ function disp_winner(winner) {
     let winner_div = document.querySelector("#winner");
     winner_div.innerText = `Player ${winner.innerText} wins!`
     document.getElementById("turn_div").remove();
+}
+
+function change_turn() {
+    if (turn == "O") {
+        document.querySelector('#turn_user').innerText = "X";
+        turn = "X";
+    } else {
+        document.querySelector('#turn_user').innerText = "O";
+        turn = "O";
+    }
 }
